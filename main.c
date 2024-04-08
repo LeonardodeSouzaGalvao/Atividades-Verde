@@ -1,33 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-//Escreva um programa que quebre uma string em palavras e as imprima.Terminadores de uma palavra sera o espaco em branco e o final da frase. Tamanho máximo 200 cada string
-
-
+//Crie um programa que remova todos os espaços em branco de uma string.tamanho máximo 200 cada string .
 int main()
 {
-    char palavra[201], outrapalavra[201];
+    char frase[201], frase2[201];
     int i, j=0;
-    scanf("%[^\n]", &palavra);
+    scanf("%[^\n]", &frase, &frase2);
 
-    for(i=0; palavra[i] != '\0'; i++)
+    for(i=0; frase[i] != '\0';i++)
+    {
+        if( frase[i] == ' ')
         {
-            if(palavra[i] == ' ')
-                {
-                    printf("%s\n", outrapalavra);
-                    outrapalavra[j] = '\0';
-                    j=0;
+            continue;
+        }
 
-
-
-                }
-            else
-                {
-                   outrapalavra[j++] = palavra[i];
-                }
+        else
+        {
+            frase2[j++] = frase[i];
 
         }
-        outrapalavra[j] = '\0';
-        if (j > 0)
-        printf("%s\n", outrapalavra);
+    }
+    printf("string:%s",frase2);
     return 0;
 }
